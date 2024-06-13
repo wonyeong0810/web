@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script>
+        function calc() {
+            // 입력 필드에서 값을 가져오기
+            var x = document.getElementById('x').value;
+            var y = document.getElementById('y').value;
+            
+            // 문자열을 정수로 변환
+            var num1 = parseInt(x);
+            var num2 = parseInt(y);
+            
+            // 두 수를 더하기
+            var result = num1 + num2;
+            
+            // 결과를 alert로 표시
+            alert("결과: " + result);
+        }
+    </script>
+</head>
+<body>
+    <h3>계산기</h3>
+    <form action="..." name="myform" method="Post">
+        첫번째 정수:    <input type="text" name="x" id="x"><br>
+        두번째 정수:    <input type="text" name="y" id="y"><br>
+        <input type="button" value="계산" onclick="calc();">
+    </form>
+</body>
+</html>

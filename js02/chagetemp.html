@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="3">
+        <tr>
+            <td>섭씨 온도</td>
+            <td>화씨 온도</td>
+        </tr>
+    
+    <script>
+         // 섭씨를 화씨로 변환하는 함수
+         function celsiusToFahrenheit(celsius) {
+            return (celsius * 9/5) + 32;
+        }
+
+        // 섭씨 온도 배열
+        const celsiusTemperatures = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        // 테이블 요소 선택
+        const table = document.querySelector('table');
+
+        // for문을 사용하여 테이블에 데이터 추가
+        for (let i = 0; i < celsiusTemperatures.length; i++) {
+            const celsius = celsiusTemperatures[i];
+            const fahrenheit = celsiusToFahrenheit(celsius);
+
+            // 새로운 행과 셀 생성
+            const row = document.createElement('tr');
+            const celsiusCell = document.createElement('td');
+            const fahrenheitCell = document.createElement('td');
+
+            // 셀에 데이터 삽입
+            celsiusCell.textContent = celsius;
+            fahrenheitCell.textContent = fahrenheit;
+
+            // 행에 셀 추가
+            row.appendChild(celsiusCell);
+            row.appendChild(fahrenheitCell);
+
+            // 테이블에 행 추가
+            table.appendChild(row);
+        }
+
+    </script>
+    </table>
+</body>
+</html>
