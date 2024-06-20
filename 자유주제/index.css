@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#searchInput {  
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#searchButton {
+    padding: 10px;
+}
+
+#movieList {
+    margin-top: 20px;
+}
+
+.movie {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+    height: 150px;
+}
+
+.movie img {
+    width: 100px;
+    height: auto;
+    float: left;
+    margin-right: 10px;
+}
+
+.movie h2 {
+    margin: 0;
+}
+
+.movie p {
+    margin: 5px 0;
+}
