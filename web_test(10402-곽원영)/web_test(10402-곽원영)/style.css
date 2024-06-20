@@ -1,0 +1,81 @@
+/* 주석은 수정하지 않습니다 */
+/* 글꼴 설정 */
+@font-face {
+    font-family: abster;
+    src: url(font/abster-webfont.woff) format('woff');
+} 
+/* 1전체 선택 2점*/
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    text-decoration-line: none;
+    color: white;
+}
+
+/* 2배경 처리 6점*/
+.container{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(images/room.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+/* 3헤더 배치 6점*/
+.header {
+    margin-left: 10%;
+    width: 80%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+/* 4글자 로고 2점*/
+.header h1{
+    text-decoration: none;
+    font-family: abster;
+
+}
+/* 5메뉴 요소 배치 4점*/
+
+.nav ul li{
+    text-decoration: none;
+    display: inline-block;
+    list-style: none;
+}
+/* 6메뉴 요소 글자속성 2점*/
+/* 7메뉴 요소 이벤트 2점*/
+.nav ul li a:hover{
+    color: yellow;
+}
+/* 8화면 중앙 요소 배치 8점*/
+.hero{
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+/* 9화면 중앙 요소 제목 2점*/
+.hero h2{
+    font-size: 60px;
+}
+/* 10화면 중앙 요소 본문 2점*/
+.hero p{
+    font-size: 22px;
+}
+/* 11화면 중앙 요소 버튼 4점*/
+button {
+    background: none;
+    border: 3px solid white;
+    padding: 15px 20px;
+    margin: 30px;
+    border-radius: 20px;
+}
+/* 11화면 중앙 요소 버튼 이벤트 */
+button:hover {
+    background-color: yellow;
+}
