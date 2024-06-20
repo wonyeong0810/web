@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>숫자 맞추기 게임</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+        }
+        h3 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #333;
+            font-size: 1.2em;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="number"] {
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            width: 100px;
+            text-align: center;
+        }
+        input[type="button"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #ff7e5f;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="button"]:hover {
+            background-color: #ff6b5f;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+    <script>
+        var targetNumber = Math.floor(Math.random() * 100) + 1;
+        var guessCount = 0; 
+
+        function guessNumber() {
+            var userGuess = document.getElementById("guess").value;
+
+            var guess = parseInt(userGuess, 10);
+
+            if (isNaN(guess) || guess < 1 || guess > 100) {
+                document.getElementById("result").innerText = "1부터 100 사이의 유효한 숫자를 입력하세요.";
+                return;
+            }
+
+            guessCount++;
+            
+            if (guess < targetNumber) {
+                document.getElementById("result").innerText = "더 높은 숫자입니다. (추측 횟수: " + guessCount + ")";
+            } else if (guess > targetNumber) {
+                document.getElementById("result").innerText = "더 낮은 숫자입니다. (추측 횟수: " + guessCount + ")";
+            } else {
+                document.getElementById("result").innerText = "정답입니다! 숫자는 " + targetNumber + "였습니다. (추측 횟수: " + guessCount + ")";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>숫자 맞추기 게임</h3>
+    <p>1부터 100까지의 숫자 중 하나를 맞춰보세요!</p>
+    <form onsubmit="return false;">
+        숫자 입력: <input id="guess" type="number" min="1" max="100" /><br />
+        <input type="button" value="제출" onclick="guessNumber();" />
+    </form>
+    <p id="result"></p>
+</body>
+</html>
